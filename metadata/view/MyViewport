@@ -1,0 +1,161 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyViewport",
+        "designer|initialView": true
+    },
+    "designerId": "a43a9ca4-74f8-478a-aea7-75bfc4bed9ba",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 600,
+                "title": "Clicking legend ..."
+            },
+            "designerId": "1486d4d3-8495-43ef-a0d2-6af8b0246b3d",
+            "cn": [
+                {
+                    "type": "Ext.chart.Chart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 250,
+                        "id": "pieChart",
+                        "width": 400,
+                        "animate": [
+                            "true"
+                        ],
+                        "insetPadding": 20,
+                        "store": "store",
+                        "theme": "Base"
+                    },
+                    "configAlternates": {
+                        "legenItem": "object",
+                        "legendItem": "object",
+                        "legendItemClick": "object",
+                        "listeners": "object"
+                    },
+                    "designerId": "db6ae7ad-210e-42ee-9fb7-1fdcc8c36cd1",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-pie-chart",
+                    "autoName": "PieChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.series.Pie",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "highlight": [
+                                    "{",
+                                    "    segment: {",
+                                    "        margin: 20",
+                                    "    }",
+                                    "}"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'name',",
+                                    "    display: 'rotate',",
+                                    "    contrast: true,",
+                                    "    font: '16px Arial'",
+                                    "}"
+                                ],
+                                "showInLegend": true,
+                                "tips": [
+                                    "{",
+                                    "    trackMouse: true,",
+                                    "    width: 140,",
+                                    "    height: 28,",
+                                    "    renderer: function(storeItem, item) {",
+                                    "        var total = 0;",
+                                    "        var store = Ext.getStore('store');",
+                                    "        store.each(function(rec) {",
+                                    "            total += rec.get('data');",
+                                    "        });",
+                                    "        this.setTitle(storeItem.get('name') + ': ' + Math.round(storeItem.get('data') / total * 100) + '%');",
+                                    "    }",
+                                    "}"
+                                ],
+                                "angleField": "data",
+                                "lengthField": null
+                            },
+                            "designerId": "5b6db6ec-004e-4c1c-af09-9423b7866f9c"
+                        },
+                        {
+                            "type": "Ext.chart.Legend",
+                            "reference": {
+                                "name": "legend",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "enableItemEvents": false,
+                                "position": "right"
+                            },
+                            "configAlternates": {
+                                "legendItem": "object",
+                                "listeners": "object",
+                                "enableItemEvents": "boolean"
+                            },
+                            "designerId": "2276e506-dc14-419a-b348-0920cef71442",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "enableItemEvents",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPieChartAfterRender",
+                                "implHandler": [
+                                    "Ext.define('MyApp.override.pieChart.LegendItem', {",
+                                    "    override: 'Ext.chart.LegendItem',",
+                                    "    onMouseDown: function() {",
+                                    "        console.log('onMouseDown override');",
+                                    "        alert(this.getLabelText());",
+                                    "        this.callOverridden();",
+                                    "        /*",
+                                    "        var me = this;",
+                                    "        if (me.legend.enableItemEvents !== false) {",
+                                    "",
+                                    "        me.callParent(arguments);",
+                                    "        }",
+                                    "        */",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "96293353-d06a-4e70-a960-c6c7989b1261"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

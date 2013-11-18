@@ -1,0 +1,70 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "storeId": "store",
+        "designer|userClassName": "store",
+        "data": [
+            "[",
+            "\t{ 'name': 'filter one',   'data': 10 },",
+            "    { 'name': 'filter two',   'data':  7 },",
+            "    { 'name': 'filter three', 'data':  5 },",
+            "    { 'name': 'filter four',  'data':  2 },",
+            "    { 'name': 'filter five',  'data': 27 }",
+            "]",
+            ""
+        ]
+    },
+    "designerId": "fff057e5-0f91-43b8-b3e5-591ac07d11a6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "e11f4ae3-4064-49ea-9628-ef6c1679fd11",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "72bf881c-6ac4-4b8f-aade-833578d33713"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "designerId": "7c88688e-3c4a-4ef6-9a74-8d274098356f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "data"
+            },
+            "designerId": "92d212d7-4531-41ee-8f76-35cf9314c57f"
+        }
+    ]
+}

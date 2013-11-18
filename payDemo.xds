@@ -1,0 +1,58 @@
+{
+    "name": "payDemo",
+    "settings": {
+        "spacesToIndent": 4,
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "urlPrefix": "http://localhost/projects/payDemo",
+        "exportPath": "",
+        "buildShouldOverwriteIndex": true
+    },
+    "xdsVersion": "2.2.3",
+    "xdsBuild": 1044,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "f71ed39c-97e9-49c6-b777-4c346ebe437e": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "a43a9ca4-74f8-478a-aea7-75bfc4bed9ba": {
+            "paths": [
+                "metadata/view/MyViewport",
+                "app/view/override/MyViewport.js",
+                "app/view/MyViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyViewport"
+        },
+        "fff057e5-0f91-43b8-b3e5-591ac07d11a6": {
+            "paths": [
+                "metadata/store/store",
+                "app/store/override/store.js",
+                "app/store/store.js"
+            ],
+            "className": "store"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "a43a9ca4-74f8-478a-aea7-75bfc4bed9ba"
+        ],
+        "store": [
+            "fff057e5-0f91-43b8-b3e5-591ac07d11a6"
+        ],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "f71ed39c-97e9-49c6-b777-4c346ebe437e"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
